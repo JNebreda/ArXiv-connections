@@ -1,4 +1,4 @@
-"""This module loads an author's collaborators in a tree"""
+"""This module loads an author's collaborators in a set"""
 
 import urllib
 import feedparser
