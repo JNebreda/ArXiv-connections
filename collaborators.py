@@ -1,9 +1,10 @@
-"""This module loads an author's collaborators in a tree"""
-
 import urllib
 import feedparser
+from name_normal import normalize_name
 
+"""Returns an author's collaborators in a set"""
 def returnCollaborators(author):
+
 	# Base api query url
 	base_url = 'http://export.arxiv.org/api/query?';
 
@@ -13,8 +14,8 @@ def returnCollaborators(author):
 	max_results = 1000
 
 	query = 'search_query=%s&start=%i&max_results=%i' % (search_query,
-                                                     start,
-                                                     max_results)
+                                                         start,
+                                                         max_results)
 
 	# perform a GET request using the base_url and query
 	response = urllib.urlopen(base_url+query).read()
@@ -31,10 +32,12 @@ def returnCollaborators(author):
 		for person in entry.authors:
 
 			surname = person.name.split(" ")[-1]
-			collaborators.add(surname)
+			collaborators.add(normalize_name(surname))
 
 	collaborators.discard(author)
 	return collaborators
+
+
 
     	
  
