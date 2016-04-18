@@ -1,8 +1,8 @@
+"""Returns an author's collaborators in a set"""
 import urllib
 import feedparser
 from name_normal import normalize_name
 
-"""Returns an author's collaborators in a set"""
 def returnCollaborators(author):
 
 	# Base api query url
