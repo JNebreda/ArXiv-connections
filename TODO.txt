@@ -1,0 +1,2 @@
+Create treeNode class out of tree class.
+When adding a collaborator, filtering to check if collaborator is already in the tree.
